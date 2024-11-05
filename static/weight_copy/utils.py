@@ -221,7 +221,7 @@ def Yuma2(
     S,
     B_old=None,
     kappa=0.5,
-    wc_penalty=0.0,
+    valid_proof_value=0.0,
     bond_penalty=1,
     bond_alpha=0.1,
     liquid_alpha=False,
@@ -266,7 +266,7 @@ def Yuma2(
     # === Weight Copying Penalty ===
     W_clipped[-1, :] *= torch.full_like(W_clipped[-1, :], 0) + (
         1 - torch.full_like(W_clipped[-1, :], 0)
-    ) * (1 - 0.6)
+    ) * (1 - valid_proof_value)
 
     # === Rank ===
     R = (S.view(-1, 1) * W_clipped).sum(dim=0)
