@@ -198,7 +198,5 @@ if __name__ == "__main__":
     plot_simulation(ax1, ax2, ax3, dividends, vtrust, NUM_RUNS, invalid_proof_tempo)
 
     plt.tight_layout()
-    plt.savefig(
-        "yuma_simulation_VALID_PROOF_VALUE_comparison.png", dpi=300, bbox_inches="tight"
-    )
+    plt.savefig("yuma_simulation_pow_comparison.png", dpi=300, bbox_inches="tight")
     plt.show()
